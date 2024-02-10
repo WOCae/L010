@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://2mcy5staqi2q"]
+
+[ext_resource type="Script" path="res://scripts/player_3.gd" id="1_govfh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2qpoy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_802np"]
+
+[node name="Player3" type="CharacterBody2D"]
+script = ExtResource("1_govfh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2qpoy")
+
+[node name="Player3" type="Area2D" parent="."]
+visible = false
+
+[node name="Node2D" type="CollisionShape2D" parent="Player3"]
+visible = false
+shape = SubResource("CircleShape2D_802np")

@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://i3d368ft3esw"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_nn1yd"]
+[ext_resource type="PackedScene" uid="uid://cjjfu07egw0iu" path="res://Scene/player.tscn" id="2_vr12r"]
+[ext_resource type="PackedScene" uid="uid://dvg35q1sv0w0m" path="res://Scene/map_2.tscn" id="4_vkv8u"]
+[ext_resource type="PackedScene" uid="uid://cug2lxk4ifq06" path="res://Scene/hud.tscn" id="4_yrqoy"]
+[ext_resource type="PackedScene" uid="uid://3s04rk44otqv" path="res://Scene/map.tscn" id="5_687r5"]
+[ext_resource type="PackedScene" uid="uid://2mcy5staqi2q" path="res://Scene/player_3.tscn" id="5_wqx4c"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_nn1yd")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 208.0
+offset_top = 394.0
+offset_right = 597.0
+offset_bottom = 490.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "GAME VIEW"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 800.0
+offset_bottom = 1380.0
+color = Color(0, 0, 0, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_vr12r")]
+
+[node name="HUD" parent="." instance=ExtResource("4_yrqoy")]
+
+[node name="MAP" parent="." instance=ExtResource("5_687r5")]
+
+[node name="Player3" parent="." instance=ExtResource("5_wqx4c")]
+
+[node name="MAP2" parent="." instance=ExtResource("4_vkv8u")]
+position = Vector2(315, 62)
+
+[connection signal="area_entered" from="MAP" to="." method="_on_map_area_entered"]
