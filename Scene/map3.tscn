@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://86lqdf1pnqyf"]
+
+[node name="map3" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(80, 330, 120, 150, 250, 70, 400, 50, 550, 70, 680, 150, 720, 330, 720, 1380, 850, 1380, 850, -50, -50, -50, -50, 1380, 80, 1380)
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(80, 1380, 80, 300, 120, 150, 250, 70, 400, 50, 550, 70, 680, 150, 720, 330, 720, 1380, 850, 1380, 850, -50, -50, -50, -50, 1380)
+closed = true
