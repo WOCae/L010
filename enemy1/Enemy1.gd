@@ -33,6 +33,7 @@ func _physics_process(delta):
 		count2 = 0
 
 # 弾を撃つ
+var bcnt = 0
 func bullet(em_X,em_Y,deg, speed, delay=1):
 	if delay > 0:
 		# 遅延して発射する
@@ -40,5 +41,7 @@ func bullet(em_X,em_Y,deg, speed, delay=1):
 	
 	var bullet = Bullet.instantiate()
 	bullet.start(0, 0, deg, speed)
+	bcnt += 1
+	bullet.name = "bullet" + str(bcnt)
 	# ルートノードを取得
 	add_child(bullet)
