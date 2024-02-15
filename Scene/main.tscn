@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://i3d368ft3esw"]
+[gd_scene load_steps=9 format=3 uid="uid://i3d368ft3esw"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_nn1yd"]
 [ext_resource type="PackedScene" uid="uid://cjjfu07egw0iu" path="res://Scene/player.tscn" id="2_vr12r"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://3s04rk44otqv" path="res://Scene/map.tscn" id="5_687r5"]
 [ext_resource type="PackedScene" uid="uid://2mcy5staqi2q" path="res://Scene/player_3.tscn" id="5_wqx4c"]
 [ext_resource type="PackedScene" uid="uid://dj6uvk35o5ujq" path="res://stage1/stage1.tscn" id="7_3vhgl"]
+[ext_resource type="PackedScene" uid="uid://bntgfeeymv4iq" path="res://enemy1/enemyA1.tscn" id="8_2eyip"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_nn1yd")
@@ -43,5 +44,7 @@ color = Color(0, 0, 0, 1)
 position = Vector2(315, 62)
 
 [node name="stage1" parent="." instance=ExtResource("7_3vhgl")]
+
+[node name="enemyA1" parent="." instance=ExtResource("8_2eyip")]
 
 [connection signal="area_entered" from="MAP" to="." method="_on_map_area_entered"]
