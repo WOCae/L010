@@ -25,3 +25,8 @@ func _physics_process(delta):
 	position = position.clamp(Vector2.ZERO, screen_size)
 	
 	move_and_slide()
+
+
+func _on_player_3_area_entered(area):
+	print(area.name)
+	pass # Replace with function body.
