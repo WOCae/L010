@@ -18,3 +18,5 @@ visible = false
 [node name="Node2D" type="CollisionShape2D" parent="Player3"]
 visible = false
 shape = SubResource("CircleShape2D_802np")
+
+[connection signal="area_entered" from="Player3" to="." method="_on_player_3_area_entered"]
