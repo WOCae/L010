@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://doptlyoibpo4v"]
+
+[ext_resource type="Script" path="res://enemy1/bulletE1.gd" id="1_l78ln"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sbqpi"]
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_l78ln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sbqpi")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
