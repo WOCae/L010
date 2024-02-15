@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bipelc6ufed6"]
+
+[ext_resource type="Script" path="res://stage1/s_map_2.gd" id="1_1j5bp"]
+
+[node name="MAP2" type="StaticBody2D"]
+script = ExtResource("1_1j5bp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(41, 108, 166, 107, 193, 177, 163, 291, 47, 227)
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(46, 227, 40, 108, 165, 105, 194, 176, 162, 292)
+closed = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
