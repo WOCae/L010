@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj6uvk35o5ujq"]
+
+[ext_resource type="Script" path="res://stage1/stage1.gd" id="1_es1mg"]
+[ext_resource type="PackedScene" uid="uid://c6dybg83fdhej" path="res://stage1/s_map.tscn" id="2_lar3s"]
+
+[node name="stage1" type="Node2D"]
+script = ExtResource("1_es1mg")
+
+[node name="map" parent="." instance=ExtResource("2_lar3s")]
