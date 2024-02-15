@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://scripts/global.gd"
+CommonE1="*res://enemy1/CommonE1.gd"
 
 [display]
 
