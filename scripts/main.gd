@@ -4,6 +4,9 @@ var lastPosi_X:float
 var lastPosi_Y:float
 var timeCount:float
 
+func _ready():
+	CommonE1.emCount == 0
+	
 func _process(delta):
 	#print(delta)
 	#位置を調べる
