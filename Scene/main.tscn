@@ -33,6 +33,7 @@ offset_bottom = 1380.0
 color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_vr12r")]
+visible = false
 
 [node name="HUD" parent="." instance=ExtResource("4_yrqoy")]
 
