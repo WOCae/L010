@@ -4,6 +4,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	CommonE1.emCount == 0
+	Global.life = 3
 	pass # Replace with function body.
 
 
