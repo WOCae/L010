@@ -13,3 +13,11 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 50
+
+[node name="life" type="Label" parent="."]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 1.0
+offset_right = 648.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 50
