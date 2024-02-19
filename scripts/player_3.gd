@@ -49,12 +49,27 @@ func _physics_process(delta):
 			var mainNode = get_owner()
 			mainNode.add_child(Ball)
 
-
+#@onready var _camera = $Camera2D # カメラ.
+#var _tShake: float = 0 # 画面揺らすタイマー.
 func _on_player_3_area_entered(area):
 	print(area.name)
-	Global.life -=1
+	if "bullet" in area.name:
+		Global.life -=1
+		print("ライフ："+str(Global.life))
+		## 画面揺らす
+		#_camera.offset = Vector2.ZERO
+		#_tShake -= delta
+		#if _tShake > 0:
+			#var rate = _tShake / TIMER_SHAKE
+			#var vx = 64 * rate
+			#var vy = 16 * rate
+			#_camera.offset.x = randi_range(-vx, vx)
+			#_camera.offset.y = randi_range(-vy, vy)
+			## 画面揺れ中はリスタートできなくする.
+			#return
+	
 	
 	if Global.life == 0:
 		# ゲームオーバーになる
-		get_tree().change_scene_to_file("res://Scene/end_game.tscn")
-	pass # Replace with function body.
+		#get_tree().change_scene_to_file("res://Scene/end_game.tscn")
+		pass # Replace with function body.
