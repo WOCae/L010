@@ -52,4 +52,9 @@ func _physics_process(delta):
 
 func _on_player_3_area_entered(area):
 	print(area.name)
+	Global.life -=1
+	
+	if Global.life == 0:
+		# ゲームオーバーになる
+		get_tree().change_scene_to_file("res://Scene/end_game.tscn")
 	pass # Replace with function body.
