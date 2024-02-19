@@ -6,7 +6,7 @@ var timeCount:float
 
 func _ready():
 	CommonE1.emCount = 0
-	Global.life = 3
+
 func _process(delta):
 	#print(delta)
 	#位置を調べる
@@ -19,6 +19,7 @@ func _process(delta):
 	lastPosi_X = $Player3.position.x
 	lastPosi_Y = $Player3.position.y
 	$HUD/time.text = "%7.1f" % timeCount #7は全文字数（.を含む）1は小数点以下数
+	$HUD/life.text =str(Global.life)
 	#カウント5以上で画面遷移
 	if timeCount >= 5:
 		get_tree().change_scene_to_file("res://Scene/end_game.tscn")
