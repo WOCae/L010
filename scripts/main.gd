@@ -5,8 +5,8 @@ var lastPosi_Y:float
 var timeCount:float
 
 func _ready():
-	CommonE1.emCount == 0
-	
+	CommonE1.emCount = 0
+	Global.life = 3
 func _process(delta):
 	#print(delta)
 	#位置を調べる
@@ -27,5 +27,8 @@ func _process(delta):
 
 func _on_map_area_entered(area):
 	if area.name == "Player3":
+		Global.life -=1
+	
+	if Global.life == 0:
 		# ゲームオーバーになる
 		get_tree().change_scene_to_file("res://Scene/end_game.tscn")
