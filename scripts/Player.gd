@@ -2,15 +2,15 @@ extends Area2D
 
 var posScale = 5
 func _physics_process(delta):
-	
-	if Input.is_action_pressed(&"move_right"):
-		position.x += 1*posScale
-	if Input.is_action_pressed(&"move_left"):
-		position.x -= 1*posScale
-	if Input.is_action_pressed(&"move_down"):
-		position.y += 1*posScale
-	if Input.is_action_pressed(&"move_up"):
-		position.y -= 1*posScale
+	pass
+	#if Input.is_action_pressed(&"move_right"):
+		#position.x += 1*posScale
+	#if Input.is_action_pressed(&"move_left"):
+		#position.x -= 1*posScale
+	#if Input.is_action_pressed(&"move_down"):
+		#position.y += 1*posScale
+	#if Input.is_action_pressed(&"move_up"):
+		#position.y -= 1*posScale
 
 #var screen_size # Size of the game window.
 #
