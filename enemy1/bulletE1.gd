@@ -10,9 +10,10 @@ func start(x, y, deg, speed):
 	velocity.y = speed * -sin(deg_to_rad(deg))
 
 
+#func _process(delta):
+	#position += velocity * delta
 func _physics_process(delta):
 	position += velocity * delta
-
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
@@ -21,6 +22,6 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 func _on_area_entered(area):
 	print("bullet:"+area.name)
-	if area.name == "Ball":
+	if area.name == "MAP" || area.name == "map":
 		queue_free()
-	pass # Replace with function body.
+	#pass # Replace with function body.
