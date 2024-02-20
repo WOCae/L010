@@ -3,6 +3,7 @@ extends Node2D
 var lastPosi_X:float
 var lastPosi_Y:float
 var timeCount:float
+var latetimeCount:float
 
 func _ready():
 	CommonE1.emCount = 0
@@ -20,6 +21,8 @@ func _process(delta):
 	lastPosi_Y = $Player3.position.y
 	$HUD/time.text = "%7.1f" % timeCount #7は全文字数（.を含む）1は小数点以下数
 	$HUD/life.text =str(Global.life)
+	Global.elapsedTime += delta	
+	$HUD/elapsed_time.text = "%7.1f" % Global.elapsedTime
 	#カウント5以上で画面遷移
 	if timeCount >= 5:
 		get_tree().change_scene_to_file("res://Scene/end_game.tscn")
