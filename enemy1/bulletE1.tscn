@@ -11,3 +11,5 @@ script = ExtResource("1_l78ln")
 shape = SubResource("CircleShape2D_sbqpi")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
