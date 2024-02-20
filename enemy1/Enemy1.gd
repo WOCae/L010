@@ -18,17 +18,18 @@ var count2:int
 var degcount:float
 var em_X:float
 var em_Y:float
-
+var bulletOUT:int
+var bulletOUT2:int
 func _physics_process(delta):
 	
 	count2 = count2 + 1		
 	if count2 == 1:
 		#for i in range(1):
-		for i in range(2):
+		for i in range(bulletsetting(Global.elapsedTime)):
 			pass
 			#degcount += 10 +delta*10 #発射角度
 			degcount +=10
-			bullet(position.x,position.y,-90+degcount, 100, 1)
+			bullet(position.x,position.y,-90+degcount, bulletsetting2(Global.elapsedTime), 1)
 		await get_tree().create_timer(0.5).timeout
 		count2 = 0
 
@@ -45,3 +46,43 @@ func bullet(em_X,em_Y,deg, speed, delay=1):
 	bullet.name = "bullet" + str(bcnt)
 	# ルートノードを取得
 	add_child(bullet)
+
+#経過時間による値
+func bulletsetting(Etime):
+	
+	if Etime < 10:
+		bulletOUT = 2
+		pass
+	elif Etime > 10 && Etime < 20:
+		bulletOUT = 5
+		pass
+	elif Etime > 20 && Etime < 30:
+		bulletOUT = 10
+		pass
+	elif Etime > 30 && Etime < 40:
+		bulletOUT = 20
+		pass
+	
+	pass
+	
+	return bulletOUT
+
+#弾速
+func bulletsetting2(Etime):
+	
+	if Etime < 10:
+		bulletOUT2 = 100
+		pass
+	elif Etime > 10 && Etime < 20:
+		bulletOUT2 = 200
+		pass
+	elif Etime > 20 && Etime < 30:
+		bulletOUT2 = 300
+		pass
+	elif Etime > 30 && Etime < 40:
+		bulletOUT2 = 400
+		pass
+	
+	pass
+	
+	return bulletOUT2
