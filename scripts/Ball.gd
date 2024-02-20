@@ -1,4 +1,5 @@
 extends Area2D
+class_name Ball
 
 var velocity = Vector2()
 
