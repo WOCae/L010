@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://i3d368ft3esw"]
+[gd_scene load_steps=10 format=3 uid="uid://i3d368ft3esw"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_nn1yd"]
 [ext_resource type="PackedScene" uid="uid://cjjfu07egw0iu" path="res://Scene/player.tscn" id="2_vr12r"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://2mcy5staqi2q" path="res://Scene/player_3.tscn" id="5_wqx4c"]
 [ext_resource type="PackedScene" uid="uid://dj6uvk35o5ujq" path="res://stage1/stage1.tscn" id="7_3vhgl"]
 [ext_resource type="PackedScene" uid="uid://bntgfeeymv4iq" path="res://enemy1/enemyA1.tscn" id="8_2eyip"]
+[ext_resource type="Script" path="res://scripts/PauseScreen.gd" id="9_et76i"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_nn1yd")
@@ -46,5 +47,51 @@ position = Vector2(315, 62)
 [node name="stage1" parent="." instance=ExtResource("7_3vhgl")]
 
 [node name="enemyA1" parent="." instance=ExtResource("8_2eyip")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(400, 690)
+
+[node name="PauseScreen" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 800.0
+offset_bottom = 1380.0
+script = ExtResource("9_et76i")
+
+[node name="ColorRect" type="ColorRect" parent="PauseScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.435294)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseScreen"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="PauseScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Press P to continue.
+Press Q to back to start menu."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="area_entered" from="MAP" to="." method="_on_map_area_entered"]
