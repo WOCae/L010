@@ -3,8 +3,8 @@ extends CharacterBody2D
 var screen_size # Size of the game window.
 
 @export var speed = 380
-@export var Shotcnt = 0.5 #射出間隔
-@export var ShotSpeed = 500 #速度
+@export var Shotcnt = 1.5 #射出間隔
+@export var ShotSpeed = 800 #速度
 var cnt = 0
 const Ball = preload("res://Scene/ball.tscn") #ballシーンのプリロード
 
@@ -55,7 +55,7 @@ func _on_player_3_area_entered(area):
 	#print(area.name)
 	if "bullet" in area.name:
 		
-		if Global.life != 0:
+		if Global.life > 0:
 			#ヒットストップ
 			Engine.set_time_scale(0.1)	
 			await get_tree().create_timer(0.1).timeout
