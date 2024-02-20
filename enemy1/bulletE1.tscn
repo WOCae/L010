@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://enemy1/bulletE1.gd" id="1_l78ln"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sbqpi"]
+radius = 5.0
 
 [node name="Bullet" type="Area2D"]
 script = ExtResource("1_l78ln")
