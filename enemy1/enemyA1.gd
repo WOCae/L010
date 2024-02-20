@@ -1,7 +1,7 @@
 extends Node2D
 
 var xPos = 250
-var yPos = 100
+var yPos = 500
 var Enemy = preload("res://enemy1/enemy1.tscn")
 
 func _ready():
@@ -28,7 +28,7 @@ func _process(delta):
 	#if CommonE1.emCount == 0:
 		for i in range(3):
 			var Enemy = Enemy.instantiate()
-			Enemy.setPos(position.x + i*xPos+100, position.y + yPos)
+			Enemy.setPos(position.x + i*xPos+150, position.y + yPos)
 			Enemy.name = "Enemy" + str(i)
 			self.add_child(Enemy)
 			
