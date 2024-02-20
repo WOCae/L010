@@ -8,7 +8,7 @@ const Window_W = 800 -32
 const Window_H = 1380 -32 
 
 
-func _physics_process(delta):
+func _process(delta):
 	if isInScreen(self) == false:
 
 		queue_free() #out
