@@ -17,3 +17,10 @@ func _physics_process(delta):
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
 	pass # Replace with function body.
+
+
+func _on_area_entered(area):
+	print("bullet:"+area.name)
+	if area.name == "Ball":
+		queue_free()
+	pass # Replace with function body.
