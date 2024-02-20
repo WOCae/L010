@@ -54,6 +54,11 @@ func _physics_process(delta):
 func _on_player_3_area_entered(area):
 	print(area.name)
 	if "bullet" in area.name:
+		#ヒットストップ
+		Engine.set_time_scale(0.1)	
+		await get_tree().create_timer(0.1).timeout
+		Engine.set_time_scale(1.0)	
+		
 		Global.life -=1
 		print("ライフ："+str(Global.life))
 		## 画面揺らす
