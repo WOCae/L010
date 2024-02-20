@@ -21,7 +21,10 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 
 func _on_area_entered(area):
-	print("bullet:"+area.name)
+	#print("bullet:"+area.name)
 	if area.name == "MAP" || area.name == "map":
 		queue_free()
+		
+	if area is Ball:
+		queue_free()	
 	#pass # Replace with function body.
