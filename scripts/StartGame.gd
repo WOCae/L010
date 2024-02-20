@@ -5,6 +5,7 @@ extends Control
 func _ready():
 	CommonE1.emCount == 0
 	Global.life = 3
+	Global.elapsedTime = 0
 	pass # Replace with function body.
 
 
@@ -25,5 +26,5 @@ func _process(delta):
 #シーンの切り替え
 func _input(event: InputEvent) -> void:
 	# キーボードのキーが押された場合の処理
-	if event is InputEventKey:
+	if event is InputEventKey || Input.is_action_pressed(("start")):
 		get_tree().change_scene_to_file("res://Scene/main.tscn")
