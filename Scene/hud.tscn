@@ -21,3 +21,10 @@ offset_top = 1.0
 offset_right = 648.0
 offset_bottom = 70.0
 theme_override_font_sizes/font_size = 50
+
+[node name="elapsed_time" type="Label" parent="."]
+layout_mode = 0
+offset_top = 60.0
+offset_right = 40.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 50
