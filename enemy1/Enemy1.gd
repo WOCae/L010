@@ -86,3 +86,11 @@ func bulletsetting2(Etime):
 	pass
 	
 	return bulletOUT2
+
+
+func _on_area_entered(area):
+	#print(area.name)
+	#if area.name == "Ball":
+	#if area is Ball:
+		#queue_free()	
+	pass # Replace with function body.
