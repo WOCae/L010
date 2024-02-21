@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player3
 
 var screen_size # Size of the game window.
 
@@ -12,7 +13,10 @@ const Ball = preload("res://Scene/ball.tscn") #ballシーンのプリロード
 func _ready():
 	screen_size = get_viewport_rect().size
 	position = Vector2(400, 1000)
-		
+	#弾
+	Global.ballScal_X = 1
+	Global.ballScal_Y = 1
+	
 func _physics_process(delta):
 	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed(&"move_right"):
@@ -69,22 +73,15 @@ func _on_player_3_area_entered(area):
 		
 		else:
 			get_tree().change_scene_to_file("res://Scene/end_game.tscn")
-			pass # Replace with function body.
+			#pass # Replace with function body.
 			
-			
-		#_camera.offset = Vector2.ZERO
-		#_tShake -= delta
-		#if _tShake > 0:
-			#var rate = _tShake / TIMER_SHAKE
-			#var vx = 64 * rate
-			#var vy = 16 * rate
-			#_camera.offset.x = randi_range(-vx, vx)
-			#_camera.offset.y = randi_range(-vy, vy)
-			## 画面揺れ中はリスタートできなくする.
-			#return
-	
-	
-	#if Global.life == 0:
-		## ゲームオーバーになる
-		#get_tree().change_scene_to_file("res://Scene/end_game.tscn")
-		#pass # Replace with function body.
+	elif "Item" in area.name:
+		print(area.name)
+		speed += 100
+		
+		#var collision_shape2d = get_node("CollisionShape2D")
+
+		# 衝突形状のスケールをX軸方向に2倍、Y軸方向に3倍に設定
+		#$CollisionShape2D.scale = Vector2(2, 3)
+		Global.ballScal_X += 2
+		Global.ballScal_Y += 2
