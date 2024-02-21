@@ -8,14 +8,18 @@ const Window_Y = 32
 const Window_W = 800 -32
 const Window_H = 1380 -32 
 
-
+func _ready():
+	pass
+	
 func _process(delta):
 	if isInScreen(self) == false:
 
 		queue_free() #out
 	
 	position += velocity * delta
-
+	$CollisionShape2D.scale = Vector2(Global.ballScal_X, Global.ballScal_Y)
+	
+	
 func isInScreen(ball):
 	# out
 	if ball.position.x < Window_X:
