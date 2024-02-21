@@ -10,6 +10,10 @@ var latetimeCount:float
 var _tShake: float = 0 # 画面揺らすタイマー.
 const TIMER_SHAKE = 1.5 # 0.5秒の間揺らす
 
+#アイテム発生用に追加
+var Item = preload("res://Item/item.tscn")
+var Items = ["ItemA","ItemB","ItemC"]
+var remainder2
 
 func _ready():
 	CommonE1.emCount = 0
@@ -58,7 +62,25 @@ func _process(delta):
 			_tShake = 0
 			Global.damage = false
 	
-	
+	#r6 アイテムの出現
+	#10秒ごとに出現
+	var Etime = "%7.0f" % Global.elapsedTime
+	var remainder = int(Etime) % 10
+	if remainder2 != remainder:
+		remainder2 = remainder
+		
+		if remainder == 0:
+			print("出現")
+			for i in range(1):
+				var Item = Item.instantiate()
+				var item_x = randi_range(0, 10)
+				#print(item_x*100)
+				Item.name = Items[randi_range(0, 2)]			
+				Item.setPos( item_x*100, position.y +200,Item.name)
+				#Item.name = "Item" + str(i)			
+				self.add_child(Item)
+
+		
 func _on_map_area_entered(area):
 	if area.name == "Player3":
 		Global.life -=1
