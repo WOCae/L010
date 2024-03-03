@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://mw2pje5hv8s1"]
+
+[ext_resource type="Texture2D" uid="uid://byjvnuso86ocq" path="res://enemy1/exp_64x64px.png" id="1_m2j7d"]
+[ext_resource type="Script" path="res://enemy1/exp.gd" id="2_424lq"]
+
+[node name="exp" type="Sprite2D"]
+texture = ExtResource("1_m2j7d")
+hframes = 5
+vframes = 7
+frame = 34
+script = ExtResource("2_424lq")
