@@ -1,4 +1,7 @@
 extends Area2D
+
+class_name Item
+
 var Im_X:float
 var Im_Y:float
 
