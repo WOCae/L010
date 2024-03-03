@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://djm0tao2xiu8n"]
+
+[ext_resource type="AudioStream" uid="uid://cv43qnncbqf2l" path="res://enemy1/Hit_Hurt11.wav" id="1_s2kye"]
+
+[node name="SE_exp" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_s2kye")
