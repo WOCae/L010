@@ -79,10 +79,10 @@ func _process(delta):
 			print("出現")
 			for i in range(1):
 				var Item = Item.instantiate()
-				var item_x = randi_range(0, 10)
+				# var item_x = randi_range(0, 10)
 				#print(item_x*100)
 				Item.name = Items[randi_range(0, 2)]			
-				Item.setPos( item_x*100, position.y +200,Item.name)
+				Item.setPos( Global.item_x*100, position.y +200,Item.name)
 				#Item.name = "Item" + str(i)			
 				self.add_child(Item)
 
