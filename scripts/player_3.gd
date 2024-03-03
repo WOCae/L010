@@ -4,7 +4,7 @@ class_name Player3
 var screen_size # Size of the game window.
 
 @export var speed = 380
-@export var Shotcnt = 1.5 #射出間隔
+@export var Shotcnt = 0.3 #射出間隔
 @export var ShotSpeed = 800 #速度
 var cnt = 0
 const Ball = preload("res://Scene/ball.tscn") #ballシーンのプリロード
@@ -39,9 +39,11 @@ func _physics_process(delta):
 	#ballを作成する　スペースを押すとボールが作成されます。
 	if Input.is_action_pressed(("ui_select")) || Input.is_action_pressed(("shot")):
 		cnt += delta
+		print(cnt,":",Shotcnt)
 		if cnt > Shotcnt:
 			cnt -= Shotcnt
-		
+			#cnt = 0	
+			
 			# ball 
 			var Ball = Ball.instantiate()
 			Ball.position = position
@@ -57,7 +59,9 @@ func _physics_process(delta):
 #var _tShake: float = 0 # 画面揺らすタイマー.
 func _on_player_3_area_entered(area):
 	#print(area.name)
-	if "bullet" in area.name:
+	
+	#if "bullet" in area.name:
+	if area is BulletE1:
 		
 		if Global.life > 0:
 			#ヒットストップ
@@ -74,8 +78,28 @@ func _on_player_3_area_entered(area):
 		else:
 			get_tree().change_scene_to_file("res://Scene/end_game.tscn")
 			#pass # Replace with function body.
-			
-	elif "Item" in area.name:
+	
+	##if area in Item:
+	#if area is Item:
+	##if "Item" in area.name:
+		#print(area.name)
+		#speed += 100
+		#
+		##var collision_shape2d = get_node("CollisionShape2D")
+#
+		## 衝突形状のスケールをX軸方向に2倍、Y軸方向に3倍に設定
+		##$CollisionShape2D.scale = Vector2(2, 3)
+		#Global.ballScal_X += 2
+		#Global.ballScal_Y += 2
+#
+		#Global.itmeCount +=1
+		
+
+
+func _on_player_3_area_entered2(area):
+	#if area in Item:
+	if area is Item:
+	#if "Item" in area.name:
 		print(area.name)
 		speed += 100
 		
@@ -85,3 +109,5 @@ func _on_player_3_area_entered(area):
 		#$CollisionShape2D.scale = Vector2(2, 3)
 		Global.ballScal_X += 2
 		Global.ballScal_Y += 2
+
+		Global.itmeCount +=1
