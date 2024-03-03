@@ -8,3 +8,5 @@ var damage:bool
 
 var ballScal_X:float
 var ballScal_Y:float
+
+var itmeCount:int
