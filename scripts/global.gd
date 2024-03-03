@@ -10,3 +10,4 @@ var ballScal_X:float
 var ballScal_Y:float
 
 var itmeCount:int
+var item_x = randi_range(1, 7) #アイテムの出現範囲
