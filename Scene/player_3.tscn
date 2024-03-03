@@ -8,7 +8,6 @@
 
 [node name="Player3" type="CharacterBody2D"]
 script = ExtResource("1_govfh")
-Shotcnt = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2qpoy")
@@ -21,3 +20,4 @@ visible = false
 shape = SubResource("CircleShape2D_802np")
 
 [connection signal="area_entered" from="Player3" to="." method="_on_player_3_area_entered"]
+[connection signal="area_entered" from="Player3" to="." method="_on_player_3_area_entered2"]
