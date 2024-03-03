@@ -21,6 +21,11 @@ func _ready():
 	_tShake = 0
 	Global.damage = false
 func _process(delta):
+	#print("音量",$AudioStreamPlayer.get_level())
+	#var volume = AudioServer.get_level()
+#
+	#print("Volume:", volume)
+	
 	#print(delta)
 	#位置を調べる
 	if $Player3.position.x== lastPosi_X && $Player3.position.y== lastPosi_Y:
@@ -35,6 +40,7 @@ func _process(delta):
 	$HUD/life.text =str(Global.life)
 	Global.elapsedTime += delta	
 	$HUD/elapsed_time.text = "%7.1f" % Global.elapsedTime
+	$HUD/ItemCount.text =str(Global.itmeCount)
 	#カウント5以上で画面遷移
 	if timeCount >= 5:
 		get_tree().change_scene_to_file("res://Scene/end_game.tscn")
@@ -80,7 +86,12 @@ func _process(delta):
 				#Item.name = "Item" + str(i)			
 				self.add_child(Item)
 
-		
+	#var audio_stream_player = get_node("AudioStreamPlayer")
+	#var volume = audio_stream_player.get_stream_volume()
+	#print("volume:",volume)
+	#var audio_server = AudioServer.get_singleton()
+	#print($AudioStreamPlayer.get("volume_db"))
+	
 func _on_map_area_entered(area):
 	if area.name == "Player3":
 		Global.life -=1
